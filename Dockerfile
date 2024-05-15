@@ -15,7 +15,8 @@ COPY ./app /app
 # which is our working directory
 WORKDIR /app
 
-EXPOSE 8000
+
+EXPOSE 8001
 
 ARG DEV=false
 
