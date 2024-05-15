@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+    # . is important after context 
+      context: .
+      # we are overriding from false(from dockerfile) to true..
+      args: 
+        - DEV=true
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    # volume is for if we loose container data will be there 
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
